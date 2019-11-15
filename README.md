@@ -88,4 +88,25 @@ Here are the steps to integrate axe accessibility tests into Cypress:
    });
    ```
 
-3. Run Cypress tests in the normal way.
+3. Run the Cypress tests in the normal way.
+
+4. If there are any issues reported by axe
+   - open the devtools in the browser window where tests were run
+   - click the "Console" tab
+   - click an axe issue to see details in the Console
+
+The axe issues reported for the default create-react-app are:
+
+1. page-has-heading-one
+
+   The description is "Ensure that the page, or at least
+   one of its frames contains a level-one heading".
+   The fix is to change the `<div>` tag in public/html to a `<main>` tag.
+
+2. page-has-heading-one
+
+   The description is "Ensure that the page, or at least
+   one of its frames contains a level-one heading".
+   A fix is to change the `<p>` tag in src/App.js to an `<h1>` tag.
+   But this issue doesn't really need to be fixed.
+   To ignore this in future axe issue reports, ...

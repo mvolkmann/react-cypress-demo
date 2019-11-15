@@ -1,7 +1,12 @@
 /* global context: false, cy: false */
 import 'cypress-axe';
+import axe from 'axe-core';
 
 const URL = 'http://localhost:3000/';
+
+axe.configure({
+  rules: [{'page-has-heading-one': {enabled: false}}]
+});
 
 context('basic', () => {
   beforeEach(() => {
