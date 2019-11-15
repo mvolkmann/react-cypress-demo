@@ -19,22 +19,27 @@ Steps I took:
    "cypress:run": "cypress run"
    ```
 
-6. `npm run cypress:open`
+6. `npm start`
+   This starts a local HTTP server for running the app.
+   It must be running in order for the tests to work,
+   regardless of whether the tests are run in a browser or headless.
+
+7. `npm run cypress:open`
    This opens the Cypress app.
 
-7. Press the "Run all specs" button to run all the supplied example tests.
+8. Press the "Run all specs" button to run all the supplied example tests.
    This opens a new browser window and runs the tests there.
    When this completes, close this browser window.
 
-8. `npm run cypress:run`
+9. `npm run cypress:run`
    This runs the supplied example tests in headless mode using Electron.
 
-9. Move the `cypress/integration/examples` directory
-   containing all the supplied example tests
-   to a location outside the `cypress` directory
-   such as `cypress-hold` so you can refer to them later.
+10. Move the `cypress/integration/examples` directory
+    containing all the supplied example tests
+    to a location outside the `cypress` directory
+    such as `cypress-hold` so you can refer to them later.
 
-10. Create a new Cypress test in the `cypress/integration` directory.
+11. Create a new Cypress test in the `cypress/integration` directory.
 
     ```js
     /* global context: false, cy: false */
@@ -48,9 +53,9 @@ Steps I took:
     });
     ```
 
-11. Verify that it works by repeating steps 6 through 8 above.
+12. Verify that it works by repeating steps 6 through 8 above.
 
-12. Browse <https://docs.cypress.io> to learn more about writing Cypress tests.
+13. Browse <https://docs.cypress.io> to learn more about writing Cypress tests.
 
 The tool "axe" from the company Deque
 detects and reports on accessibility issues in web apps.
