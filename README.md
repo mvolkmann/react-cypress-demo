@@ -51,3 +51,36 @@ Steps I took:
 11. Verify that it works by repeating steps 6 through 8 above.
 
 12. Browse <https://docs.cypress.io> to learn more about writing Cypress tests.
+
+The tool "axe" from the company Deque
+detects and reports on accessibility issues in web apps.
+
+Here are the steps to integrate axe accessibility tests into Cypress:
+
+1. `npm install -D axe-core cypress-axe`
+
+2. Modify the Cypress test shown above to look like this:
+
+   ```js
+   /* global context: false, cy: false */
+   import 'cypress-axe';
+
+   const URL = 'http://localhost:3000/';
+
+   context('basic', () => {
+     beforeEach(() => {
+       cy.visit(URL); // must preceded injectAxe call
+       cy.injectAxe();
+     });
+
+     it('home page content', () => {
+       cy.contains('Learn React');
+     });
+
+     it('home page accessibility', () => {
+       cy.checkA11y();
+     });
+   });
+   ```
+
+3. Run Cypress tests in the normal way.
