@@ -97,10 +97,10 @@ Here are the steps to integrate axe accessibility tests into Cypress:
 
 The axe issues reported for the default create-react-app are:
 
-1. page-has-heading-one
+1. landmark-one-main
 
-   The description is "Ensure that the page, or at least
-   one of its frames contains a level-one heading".
+   The description is "Ensures the document has only one main landmark
+   and each iframe in the page has at most one main landmark".
    The fix is to change the `<div>` tag in public/html to a `<main>` tag.
 
 2. page-has-heading-one
